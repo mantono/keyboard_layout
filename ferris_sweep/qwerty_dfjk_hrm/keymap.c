@@ -17,7 +17,69 @@
 #define HR_J LCMD_T(KC_J)
 #define HR_K LCTL_T(KC_K)
 #define HR_L LALT_T(KC_L)
-#define HR_ESC LSFT_T(KC_ESC),
+#define HR_ESC LSFT_T(KC_ESC)
+
+// Define keycodes for symbols with Swedish layout
+// ;
+#define SE_SCLN S(KC_COMM)
+// /
+#define SE_SLSH S(KC_7)
+// +
+#define SE_PLUS KC_MINS
+// -
+#define SE_MINS KC_SLSH
+#define SE_AT ALGR(KC_2)
+// @
+#define SE_DLR ALGR(KC_4)
+// :
+#define SE_COLN S(KC_DOT)
+#define SE_UNDS S(KC_SLSH)
+// (
+#define SE_LPRN S(KC_8)
+// [
+#define SE_LBRC ALGR(KC_8)
+// )
+#define SE_RPRN S(KC_9)
+// ]
+#define SE_RBRC ALGR(KC_9)
+// =
+#define SE_EQL S(KC_0)
+// `
+#define SE_GRV S(KC_EQL)
+// ^
+#define SE_CIRC S(KC_RBRC)
+// &
+#define SE_AMPR S(KC_6)
+// *
+#define SE_ASTR S(KC_NUHS)
+// ~
+#define SE_TILD ALGR(KC_RBRC)
+// \\
+#define SE_BSLS ALGR(KC_MINS)
+// "
+#define SE_DQUO S(KC_2)
+// '
+#define SE_APOS KC_NUHS
+// {
+#define SE_LCBR ALGR(KC_7)
+// }
+#define SE_RCBR ALGR(KC_0)
+// ?
+#define SE_QUES S(KC_MINS)
+// |
+#define SE_PIPE ALGR(KC_NUBS)
+// <
+#define SE_LESS KC_NUBS
+// >
+#define SE_GRTR S(KC_NUBS)
+// §
+#define SE_SECT KC_GRV
+// ö?
+#define SE_OSLH KC_SCLN
+// ä?
+#define SE_ADIA KC_QUOT
+// å?
+#define SE_AA KC_LBRC
 
 enum { QWERTY, NAV, SYM, NUM } layers;
 
@@ -25,8 +87,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
                             KC_Q, KC_W, KC_E, KC_R, KC_T,                  KC_Y, KC_U, KC_I, KC_O, KC_P,
-                            HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, HR_ESC,
-                            KC_Z, KC_X, KC_C, KC_V, KC_B,                  KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+                            HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, SE_SCLN,
+                            KC_Z, KC_X, KC_C, KC_V, KC_B,                  KC_N, KC_M, KC_COMM, KC_DOT, SE_SLSH,
                                         ESC_KEY, SYM_KEY,                  NAV_KEY, NUM_KEY
                             ),
 
@@ -40,10 +102,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Symbols
     [SYM] = LAYOUT_split_3x5_2(
-                           KC_EXLM, KC_AT, KC_HASH, KC_UNDS, KC_PMNS,      KC_PPLS, KC_PSLS, KC_PAST, KC_PEQL, KC_QUES,
-                           KC_LT, KC_NO, KC_LCBR, KC_LPRN, KC_AT,          KC_BSLS, KC_RPRN, KC_RCBR, KC_NO, KC_GT,
-                           KC_PLUS, KC_NO, KC_PERC, KC_CIRC, KC_NO,        KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS,
-                                                      FLASH, KC_NO,        KC_NO, KC_NO
+                         //  !           @         #           $          %                /          =          -           +           ? 
+                           KC_EXLM,    SE_AT,    KC_HASH,    SE_DLR,    KC_PRC,         SE_SLSH,    SE_EQL,    KC_PMNS,    SE_PLUS,    SE_QUES,
+                         //  <           [         {           (          '               "           )          }           ]           >
+                           SE_LESS,    SE_LBRC,  SE_LCBR,    SE_LPRN,   SE_APOS,        SE_DQOU,    SE_RPRN,   SE_RCBR,    SE_RBRC,    SE_GRTR,
+                         //  |           ^         *           §          `              \\           ~          ,           .           /
+                           SE_PIPE,    SE_CIRC,  SE_ASTR,    SE_SECT,   SE_GRV,         SE_BSLS,    SE_TILD,   KC_TRNS,    KC_TRNS,    KC_TRNS,
+                                                               FLASH,   KC_NO,          KC_NO,      KC_NO
                            ),
 
     // Numbers and function keys
