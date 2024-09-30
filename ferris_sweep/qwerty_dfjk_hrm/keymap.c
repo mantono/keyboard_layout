@@ -8,6 +8,8 @@
 #define NUM_KEY LT(NUM, KC_ENT)
 #define ESC_KEY KC_ESC
 
+#define FLASH QK_BOOT
+
 #define HR_A LSFT_T(KC_A)
 #define HR_S LALT_T(KC_S)
 #define HR_D LCTL_T(KC_D)
@@ -33,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_LEFT, KC_RGHT, KC_HOME,       KC_END, KC_DOWN, KC_UP, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,             KC_NO, KC_PGDN, KC_PGUP, KC_NO, KC_NO,
-                                                 KC_NO, KC_NO,             KC_NO, KC_NO
+                                                 KC_NO, KC_NO,             KC_NO, FLASH
                             ),
 
     // Symbols
@@ -41,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_EXLM, KC_AT, KC_HASH, KC_UNDS, KC_PMNS,      KC_PPLS, KC_PSLS, KC_PAST, KC_PEQL, KC_QUES,
                            KC_LT, KC_NO, KC_LCBR, KC_LPRN, KC_AT,          KC_BSLS, KC_RPRN, KC_RCBR, KC_NO, KC_GT,
                            KC_PLUS, KC_NO, KC_PERC, KC_CIRC, KC_NO,        KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS,
-                                                      KC_NO, KC_NO,        KC_NO, KC_NO
+                                                      FLASH, KC_NO,        KC_NO, KC_NO
                            ),
 
     // Numbers and function keys
