@@ -1,1 +1,2 @@
 CONSOLE_ENABLE = yes
+CAPS_WORD = yes

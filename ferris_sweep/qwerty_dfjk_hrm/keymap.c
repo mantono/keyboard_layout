@@ -17,7 +17,7 @@
 #define HR_J LCMD_T(KC_J)
 #define HR_K LCTL_T(KC_K)
 #define HR_L LALT_T(KC_L)
-#define HR_ESC LSFT_T(KC_ESC)
+#define HR_SCLN RSFT_T(SE_SCLN)
 
 // Define keycodes for symbols with Swedish layout
 // ;
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
                             KC_Q, KC_W, KC_E, KC_R, KC_T,                  KC_Y, KC_U, KC_I, KC_O, KC_P,
-                            HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, SE_SCLN,
+                            HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, HR_SCLN,
                             KC_Z, KC_X, KC_C, KC_V, KC_B,                  KC_N, KC_M, KC_COMM, KC_DOT, SE_SLSH,
                                         ESC_KEY, SYM_KEY,                  NAV_KEY, NUM_KEY
                             ),

@@ -40,6 +40,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM 0
 
+// Active CAPS_WORD when left and right shift is pressed at the same time
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLIGHT_EFFECT_BREATHING
