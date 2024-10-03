@@ -75,13 +75,13 @@
 // §
 #define SE_SECT KC_GRV
 // ö?
-#define SE_OSLH KC_SCLN
+#define SE_OE KC_SCLN
 // ä?
-#define SE_ADIA KC_QUOT
+#define SE_AE KC_QUOT
 // å?
 #define SE_AA KC_LBRC
 
-enum { QWERTY, NAV, SYM, NUM } layers;
+enum { QWERTY, NAV, SYM, NUM, SWE } layers;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
@@ -115,6 +115,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NUM] = LAYOUT_split_3x5_2(
                            KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,              KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
                            KC_1,  KC_2,  KC_3,  KC_4,  KC_5,               KC_6,  KC_7,  KC_8,  KC_9,  KC_0,
+                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                                KC_NO, KC_NO,              KC_NO, KC_NO
+                           ),
+
+    // Swedish letters
+    [SWE] = LAYOUT_split_3x5_2(
+                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                                 KC_NO, KC_NO,              KC_NO, KC_NO
                            )

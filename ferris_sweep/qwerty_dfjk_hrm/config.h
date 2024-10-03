@@ -36,9 +36,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 
 // Pick good defaults for enabling homerow modifiers
-#define TAPPING_TERM 200
-#define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM 0
+#define TAPPING_TERM 220
+
+// Disable PERMISSIVE_HOLD since it does not quite suite my style of typings, see
+// https://docs.qmk.fm/tap_hold#permissive-hold
+//#define PERMISSIVE_HOLD
+
+// https://docs.qmk.fm/tap_hold#quick-tap-term
+#define QUICK_TAP_TERM 150
+
+// https://docs.qmk.fm/tap_hold#retro-tapping
+#define RETRO_TAPPING
 
 // Active CAPS_WORD when left and right shift is pressed at the same time
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
