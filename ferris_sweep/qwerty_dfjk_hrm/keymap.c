@@ -83,6 +83,21 @@
 
 enum { QWERTY, NAV, SYM, NUM, SWE } layers;
 
+enum {
+  // å/Å
+  TD_AA = 0,
+  // ä/Ä
+  TD_AE,
+  // ö/Ö
+  TD_OE
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_AA] = ACTION_TAP_DANCE_WHAT(SE_AA, S(SE_AA)),
+  [TD_AE] = ACTION_TAP_DANCE_WHAT(SE_AE, S(SE_AE)),
+  [TD_OE] = ACTION_TAP_DANCE_WHAT(SE_OE, S(SE_OE))
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
