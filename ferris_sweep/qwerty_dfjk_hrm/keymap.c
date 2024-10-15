@@ -3,6 +3,8 @@
 #    include "keymap.h"
 #endif
 
+#include "../td.c"
+
 #define NAV_KEY LT(NAV, KC_BSPC)
 #define SYM_KEY LT(SYM, KC_SPC)
 #define NUM_KEY LT(NUM, KC_ENT)
@@ -74,12 +76,9 @@
 #define SE_GRTR S(KC_NUBS)
 // §
 #define SE_SECT KC_GRV
-// ö?
-#define SE_OE KC_SCLN
-// ä?
-#define SE_AE KC_QUOT
-// å?
-#define SE_AA KC_LBRC
+
+#define SWE_LEFT_KEY LT(SWE, KC_Z)
+#define SWE_RIGHT_KEY LT(SWE, SE_SLSH)
 
 enum { QWERTY, NAV, SYM, NUM, SWE } layers;
 
@@ -88,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [QWERTY] = LAYOUT_split_3x5_2(
                             KC_Q, KC_W, KC_E, KC_R, KC_T,                  KC_Y, KC_U, KC_I, KC_O, KC_P,
                             HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, HR_SCLN,
-                            KC_Z, KC_X, KC_C, KC_V, KC_B,                  KC_N, KC_M, KC_COMM, KC_DOT, SE_SLSH,
+                            SWE_LEFT_KEY, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, KC_COMM, KC_DOT, SWE_RIGHT_KEY,
                                         ESC_KEY, SYM_KEY,                  NAV_KEY, NUM_KEY
                             ),
 
@@ -121,10 +120,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Swedish letters
     [SWE] = LAYOUT_split_3x5_2(
-                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                                KC_NO, KC_NO,              KC_NO, KC_NO
+                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
+                           KC_NO, TD(TD_OE), TD(TD_AE), TD(TD_AA), KC_NO,        KC_NO, TD(TD_AA), TD(TD_AE), TD(TD_OE), KC_NO,
+                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
+                                                        KC_NO,     KC_NO,        KC_NO, KC_NO
                            )
 };
 

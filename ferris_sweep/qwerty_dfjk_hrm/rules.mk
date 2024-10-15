@@ -1,2 +1,3 @@
 CONSOLE_ENABLE = yes
 CAPS_WORD = yes
+TAP_DANCE_ENABLE = yes
