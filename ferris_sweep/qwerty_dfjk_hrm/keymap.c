@@ -104,7 +104,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     tap_dance_action_t *action;
 
     switch (keycode) {
-        // TODO: Implement logic
         case TD(TD_AA):
         case TD(TD_AE):
         case TD(TD_OE): 
