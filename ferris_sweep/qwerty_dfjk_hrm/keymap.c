@@ -86,6 +86,7 @@
 
 enum { QWERTY, NAV, SYM, NUM, SWE } layers;
 
+// https://docs.qmk.fm/features/tap_dance#example-3
 enum {
   // å/Å
   TD_AA = 0,
@@ -95,29 +96,11 @@ enum {
   TD_OE
 };
 
-// https://docs.qmk.fm/features/tap_dance#example-3
-
 typedef struct {
     uint16_t tap;
     uint16_t hold;
     uint16_t held;
 } tap_dance_tap_hold_t;
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    tap_dance_action_t *action;
-
-    switch (keycode) {
-        case TD(TD_AA):
-        case TD(TD_AE):
-        case TD(TD_OE): 
-            action = &tap_dance_actions[QK_TAP_DANCE_GET_INDEX(keycode)];
-            if (!record->event.pressed && action->state.count && !action->state.finished) {
-                tap_dance_tap_hold_t *tap_hold = (tap_dance_tap_hold_t *)action->user_data;
-                tap_code16(tap_hold->tap);
-            }
-    }
-    return true;
-}
 
 void tap_dance_tap_hold_finished(tap_dance_state_t *state, void *user_data) {
     tap_dance_tap_hold_t *tap_hold = (tap_dance_tap_hold_t *)user_data;
@@ -149,12 +132,28 @@ void tap_dance_tap_hold_reset(tap_dance_state_t *state, void *user_data) {
 #define ACTION_TAP_DANCE_TAP_HOLD(tap, hold) \
     { .fn = {NULL, tap_dance_tap_hold_finished, tap_dance_tap_hold_reset}, .user_data = (void *)&((tap_dance_tap_hold_t){tap, hold, 0}), }
 
-
 tap_dance_action_t tap_dance_actions[] = {
   [TD_AA] = ACTION_TAP_DANCE_TAP_HOLD(SE_AA, S(SE_AA)),
   [TD_AE] = ACTION_TAP_DANCE_TAP_HOLD(SE_AE, S(SE_AE)),
   [TD_OE] = ACTION_TAP_DANCE_TAP_HOLD(SE_OE, S(SE_OE)),
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    tap_dance_action_t *action;
+
+    switch (keycode) {
+        case TD(TD_AA):
+        case TD(TD_AE):
+        case TD(TD_OE): 
+            action = &tap_dance_actions[QK_TAP_DANCE_GET_INDEX(keycode)];
+            if (!record->event.pressed && action->state.count && !action->state.finished) {
+                tap_dance_tap_hold_t *tap_hold = (tap_dance_tap_hold_t *)action->user_data;
+                tap_code16(tap_hold->tap);
+            }
+    }
+    return true;
 }
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
@@ -194,10 +193,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Swedish letters
     [SWE] = LAYOUT_split_3x5_2(
-                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,              KC_NO,     KC_NO,     KC_NO, KC_NO, KC_NO,
-                           KC_NO, KC_NO, TD(TD_OE), TD(TD_AE), TD(TD_AA),          TD(TD_AA), TD(TD_AE), TD(TD_OE), KC_NO, KC_NO,
-                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,              KC_NO,     KC_NO,     KC_NO, KC_NO, KC_NO,
-                                                        KC_NO,     KC_NO,              KC_NO,     KC_NO
+                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
+                           KC_NO, TD(TD_OE), TD(TD_AE), TD(TD_AA), KC_NO,        KC_NO, TD(TD_AA), TD(TD_AE), TD(TD_OE), KC_NO,
+                           KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
+                                                        KC_NO,     KC_NO,        KC_NO, KC_NO
                            )
 };
 
