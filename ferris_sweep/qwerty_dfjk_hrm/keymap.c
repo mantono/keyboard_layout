@@ -87,7 +87,7 @@ combo_t key_combos[] = {
     COMBO(launcher_combo, LALT(KC_S)),
 };
 
-enum { QWERTY, NAV, SYM, NUM, SWE } layers;
+enum { QWERTY, NAV, SYM, NUM, SWE, WNAV } layers;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_LEFT, KC_RGHT, KC_HOME,       KC_END, KC_DOWN, KC_UP, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,             KC_NO, KC_PGDN, KC_PGUP, KC_NO, KC_NO,
-                                                 KC_NO, KC_NO,             KC_NO, FLASH
+                                                 KC_NO, MO(WNAV),          KC_NO, FLASH
                             ),
 
     // Symbols
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            SE_LESS,    SE_LBRC,  SE_LCBR,    SE_LPRN,   SE_APOS,        SE_DQUO,    SE_RPRN,   SE_RCBR,    SE_RBRC,    SE_GRTR,
                          //  |           ^         *           §          `              \\           ~          ,           .           _
                            SE_PIPE,    SE_CIRC,  SE_ASTR,    SE_SECT,   SE_GRV,         SE_BSLS,    SE_TILD,   KC_TRNS,    KC_TRNS,    KC_UNDS,
-                                                               FLASH,   KC_NO,          KC_NO,      KC_NO
+                                                               FLASH,   KC_NO,          MO(WNAV),   KC_NO
                            ),
 
     // Numbers and function keys
@@ -132,6 +132,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
                                                         KC_NO,     KC_NO,        KC_NO, KC_NO
                            )
+
+    // Window and workspace navigation
+    [WNAV] = LAYOUT_split_3x5_2(
+                           LSA(1), LSA(2), LSA(3), LSA(4), LSA(5),         LSA(6), LSA(7), LSA(8), LSA(9), LSA(0),
+                           A(1),   A(2),   A(3),   A(4),   A(5),           A(6),   A(7),   A(8),   A(9),   A(0),
+                           KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
+                                                   KC_NO,  KC_NO,          KC_NO,  KC_NO
+                           ),
+
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
