@@ -79,6 +79,14 @@
 
 #define SWE_KEY LT(SWE, KC_Z)
 
+const uint16_t PROGMEM switcher_combo[] = {KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM launcher_combo[] = {KC_D, KC_K, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(switcher_combo, LALT(KC_H)),
+    COMBO(launcher_combo, LALT(KC_S)),
+};
+
 enum { QWERTY, NAV, SYM, NUM, SWE } layers;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
