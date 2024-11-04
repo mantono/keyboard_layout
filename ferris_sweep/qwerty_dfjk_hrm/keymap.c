@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO, TD(TD_OE), TD(TD_AE), TD(TD_AA), KC_NO,        KC_NO, TD(TD_AA), TD(TD_AE), TD(TD_OE), KC_NO,
                            KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO, KC_NO,     KC_NO,     KC_NO,     KC_NO,
                                                         KC_NO,     KC_NO,        KC_NO, KC_NO
-                           )
+                           ),
 
     // Window and workspace navigation
     [WNAV] = LAYOUT_split_3x5_2(
@@ -139,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            A(1),   A(2),   A(3),   A(4),   A(5),           A(6),   A(7),   A(8),   A(9),   A(0),
                            KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
                                                    KC_NO,  KC_NO,          KC_NO,  KC_NO
-                           ),
+                           )
 
 };
 
