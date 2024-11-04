@@ -135,10 +135,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Window and workspace navigation
     [WNAV] = LAYOUT_split_3x5_2(
-                           LSA(1), LSA(2), LSA(3), LSA(4), LSA(5),         LSA(6), LSA(7), LSA(8), LSA(9), LSA(0),
-                           A(1),   A(2),   A(3),   A(4),   A(5),           A(6),   A(7),   A(8),   A(9),   A(0),
-                           KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
-                                                   KC_NO,  KC_NO,          KC_NO,  KC_NO
+                           LSA(KC_1), LSA(KC_2), LSA(KC_3), LSA(KC_4), LSA(KC_5),         LSA(KC_6), LSA(KC_7), LSA(KC_8), LSA(KC_9), LSA(KC_0),
+                           A(KC_1),   A(KC_2),   A(KC_3),   A(KC_4),   A(KC_5),           A(KC_6),   A(KC_7),   A(KC_8),   A(KC_9),   A(KC_0),
+                           KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,             KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,
+                                                            KC_NO,     KC_NO,             KC_NO,     KC_NO
                            )
 
 };
