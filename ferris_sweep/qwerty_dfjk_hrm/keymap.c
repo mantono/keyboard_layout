@@ -76,6 +76,8 @@
 #define SE_GRTR S(KC_NUBS)
 // §
 #define SE_SECT KC_GRV
+// _
+#define SE_UNDS S(KC_SLASH)
 
 #define SWE_KEY LT(SWE, KC_Z)
 
@@ -113,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          //  <           [         {           (          '               "           )          }           ]           >
                            SE_LESS,    SE_LBRC,  SE_LCBR,    SE_LPRN,   SE_APOS,        SE_DQUO,    SE_RPRN,   SE_RCBR,    SE_RBRC,    SE_GRTR,
                          //  |           ^         *           §          `              \\           ~          ,           .           _
-                           SE_PIPE,    SE_CIRC,  SE_ASTR,    SE_SECT,   SE_GRV,         SE_BSLS,    SE_TILD,   KC_TRNS,    KC_TRNS,    KC_UNDS,
+                           SE_PIPE,    SE_CIRC,  SE_ASTR,    SE_SECT,   SE_GRV,         SE_BSLS,    SE_TILD,   KC_TRNS,    KC_TRNS,    SE_UNDS,
                                                                FLASH,   KC_NO,          MO(WNAV),   KC_NO
                            ),
 
