@@ -8,18 +8,17 @@
 #define NAV_KEY LT(NAV, KC_BSPC)
 #define SYM_KEY LT(SYM, KC_SPC)
 #define NUM_KEY LT(NUM, KC_ENT)
-#define ESC_KEY KC_ESC
+#define ESC_KEY LALT_T(KC_ESC)
 
 #define FLASH QK_BOOT
 
-#define HR_A LSFT_T(KC_A)
-#define HR_S LALT_T(KC_S)
-#define HR_D LCTL_T(KC_D)
+#define HR_A LCTL_T(KC_A)
+#define HR_S LSFT_T(KC_S)
 #define HR_F LCMD_T(KC_F)
+
 #define HR_J LCMD_T(KC_J)
-#define HR_K LCTL_T(KC_K)
-#define HR_L LALT_T(KC_L)
-#define HR_SCLN RSFT_T(SE_SCLN)
+#define HR_L RSFT_T(KC_L)
+#define HR_SCLN LCTL_T(SE_SCLN)
 
 // Define keycodes for symbols with Swedish layout
 // ;
@@ -95,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
                             KC_Q, KC_W, KC_E, KC_R, KC_T,                  KC_Y, KC_U, KC_I, KC_O, KC_P,
-                            HR_A, HR_S, HR_D, HR_F, KC_G,                  KC_H, HR_J, HR_K, HR_L, HR_SCLN,
+                            HR_A, HR_S, KC_D, HR_F, KC_G,                  KC_H, HR_J, KC_K, HR_L, HR_SCLN,
                             SWE_KEY, KC_X, KC_C, KC_V, KC_B,               KC_N, KC_M, KC_COMM, KC_DOT, KC_TAB,
                                         ESC_KEY, SYM_KEY,                  NAV_KEY, NUM_KEY
                             ),
