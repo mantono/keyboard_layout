@@ -34,7 +34,6 @@
 #define SE_DLR ALGR(KC_4)
 // :
 #define SE_COLN S(KC_DOT)
-#define SE_UNDS S(KC_SLSH)
 // (
 #define SE_LPRN S(KC_8)
 // [
