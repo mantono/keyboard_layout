@@ -14,9 +14,7 @@
 
 #define HR_A LCTL_T(KC_A)
 #define HR_S LSFT_T(KC_S)
-#define HR_F LCMD_T(KC_F)
 
-#define HR_J LCMD_T(KC_J)
 #define HR_L RSFT_T(KC_L)
 #define HR_SCLN LCTL_T(SE_SCLN)
 
@@ -81,10 +79,12 @@
 
 const uint16_t PROGMEM switcher_combo[] = {KC_F, KC_J, COMBO_END};
 const uint16_t PROGMEM launcher_combo[] = {KC_D, KC_K, COMBO_END};
+const uint16_t PROGMEM term_combo[] = {KC_G, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(switcher_combo, LALT(KC_H)),
     COMBO(launcher_combo, LALT(KC_S)),
+    COMBO(term_combo, KC_LGUI),
 };
 
 enum { QWERTY, NAV, SYM, NUM, SWE, WNAV } layers;
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
                             KC_Q,    KC_W, KC_E, KC_R,    KC_T,           KC_Y,    KC_U,   KC_I,    KC_O,   KC_P,
-                            HR_A,    HR_S, KC_D, HR_F,    KC_G,           KC_H,    HR_J,   KC_K,    HR_L,   HR_SCLN,
+                            HR_A,    HR_S, KC_D, KC_F,    KC_G,           KC_H,    KC_J,   KC_K,    HR_L,   HR_SCLN,
                             SWE_KEY, KC_X, KC_C, KC_V,    KC_B,           KC_N,    KC_M,   KC_COMM, KC_DOT, KC_TAB,
                                                  SYM_KEY, ALT_KEY,        NAV_KEY, NUM_KEY
                             ),

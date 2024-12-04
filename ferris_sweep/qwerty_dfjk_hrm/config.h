@@ -51,6 +51,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Active CAPS_WORD when left and right shift is pressed at the same time
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 
+// Set the number of combos present
+#define COMBO_COUNT 3
+
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLIGHT_EFFECT_BREATHING
