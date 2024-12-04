@@ -6,9 +6,9 @@
 #include "../td.c"
 
 #define NAV_KEY LT(NAV, KC_BSPC)
-#define SYM_KEY LT(SYM, KC_SPC)
+#define SYM_KEY LT(SYM, KC_ESC)
 #define NUM_KEY LT(NUM, KC_ENT)
-#define ESC_KEY LALT_T(KC_ESC)
+#define ALT_KEY LALT_T(KC_SPC)
 
 #define FLASH QK_BOOT
 
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_Q,    KC_W, KC_E, KC_R,    KC_T,           KC_Y,    KC_U,   KC_I,    KC_O,   KC_P,
                             HR_A,    HR_S, KC_D, HR_F,    KC_G,           KC_H,    HR_J,   KC_K,    HR_L,   HR_SCLN,
                             SWE_KEY, KC_X, KC_C, KC_V,    KC_B,           KC_N,    KC_M,   KC_COMM, KC_DOT, KC_TAB,
-                                                 ESC_KEY, SYM_KEY,        NAV_KEY, NUM_KEY
+                                                 SYM_KEY, ALT_KEY,        NAV_KEY, NUM_KEY
                             ),
 
     // Arrows keys and navigation            
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,             KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
                             KC_LCTL, KC_LSFT, KC_LEFT, KC_RGHT, KC_HOME,           KC_END, KC_DOWN, KC_UP,   KC_LSFT, KC_LCTL,
                             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,             KC_NO,  KC_PGDN, KC_PGUP, KC_NO,   KC_NO,
-                                                       KC_NO,   MO(WNAV),          KC_NO,  FLASH
+                                                       KC_NO,   MO(WNAV),          KC_NO,  KC_NO
                             ),
 
     // Symbols
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            SE_LESS,    SE_LBRC,  SE_LCBR,    SE_LPRN,   SE_APOS,        SE_DQUO,    SE_RPRN,   SE_RCBR,    SE_RBRC,    SE_GRTR,
                          //  |           ^         *           §          `              \\           ~          ,           .           _
                            SE_PIPE,    SE_CIRC,  SE_ASTR,    SE_SECT,   SE_GRV,         SE_BSLS,    SE_TILD,   KC_TRNS,    KC_TRNS,    SE_UNDS,
-                                                               FLASH,   KC_NO,          MO(WNAV),   KC_NO
+                                                             KC_NO,     FLASH,          MO(WNAV),   KC_NO
                            ),
 
     // Numbers and function keys
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,              KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
                            KC_1,  KC_2,  KC_3,  KC_4,  KC_5,               KC_6,  KC_7,  KC_8,  KC_9,  KC_0,
                            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                                KC_NO, KC_NO,              KC_NO, KC_NO
+                                                KC_NO, KC_NO,              FLASH, KC_NO
                            ),
 
     // Swedish letters
