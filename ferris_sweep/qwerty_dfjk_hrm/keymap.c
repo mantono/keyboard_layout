@@ -92,7 +92,7 @@ enum { QWERTY, NAV, SYM, NUM, SWE, WNAV } layers;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Letters and (home row) modifiers
     [QWERTY] = LAYOUT_split_3x5_2(
-                            TD(TD_Q_TAB),    KC_W, KC_E, KC_R,    KC_T,           KC_Y,    KC_U,   KC_I,    KC_O,   KC_P,
+                            KC_Q,    KC_W, KC_E, KC_R,    KC_T,           KC_Y,    KC_U,   KC_I,    KC_O,   KC_P,
                             HR_A,    HR_S, KC_D, KC_F,    KC_G,           KC_H,    KC_J,   KC_K,    HR_L,   SE_SCLN,
                             SWE_KEY, KC_X, KC_C, KC_V,    KC_B,           KC_N,    KC_M,   KC_COMM, KC_DOT, KC_PSLS,
                                                  SYM_KEY, ALT_KEY,        NAV_KEY, NUM_KEY
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Arrows keys and navigation            
     [NAV] = LAYOUT_split_3x5_2(
-                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,             KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                            KC_NO,   KC_NO,   KC_NO,   KC_TAB,  KC_NO,             KC_NO,  LSFT(KC_TAB),   KC_NO,   KC_NO,   KC_NO,
                             KC_LCTL, KC_LSFT, KC_LEFT, KC_RGHT, KC_HOME,           KC_END, KC_DOWN, KC_UP,   KC_LSFT, KC_LCTL,
                             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,             KC_NO,  KC_PGDN, KC_PGUP, KC_NO,   KC_NO,
                                                        KC_NO,   MO(WNAV),          KC_NO,  KC_NO
