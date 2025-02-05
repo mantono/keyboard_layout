@@ -5,7 +5,7 @@
 
 #include "../td.c"
 
-#define NAV_KEY LT(NAV, KC_BSPC)
+#define NAV_KEY LT(NAV, KC_SPC)
 #define SYM_KEY LT(SYM, KC_ESC)
 #define NUM_KEY LT(NUM, KC_ENT)
 #define ALT_KEY LALT_T(KC_SPC)
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Arrows keys and navigation            
     [NAV] = LAYOUT_split_3x5_2(
                             KC_NO,   KC_NO,   KC_NO,   KC_TAB,  KC_NO,             KC_NO,  LSFT(KC_TAB),   KC_NO,   KC_NO,   KC_NO,
-                            KC_LCTL, KC_LSFT, KC_LEFT, KC_RGHT, KC_HOME,           KC_END, KC_DOWN, KC_UP,   KC_LSFT, KC_LCTL,
+                            KC_LCTL, KC_LSFT, KC_LEFT, KC_RGHT, KC_HOME,           KC_END, KC_DOWN, KC_UP,   KC_LSFT, KC_BSPC,
                             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,             KC_NO,  KC_PGDN, KC_PGUP, KC_NO,   KC_NO,
                                                        KC_NO,   MO(WNAV),          KC_NO,  KC_NO
                             ),
